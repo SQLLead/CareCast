@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: vw_forecast_run_summary
+    description: '{{ doc("vw_forecast_run_summary__overview") }}'
+    columns:
+      - name: forecast_run_id
+        description: '{{ doc("vw_forecast_run_summary__forecast_run_id") }}'
+        data_tests:
+          - not_null
+          - unique
+
+      - name: model_name
+        description: '{{ doc("vw_forecast_run_summary__model_name") }}'
+        data_tests:
+          - not_null
+
+      - name: run_timestamp
+        description: '{{ doc("vw_forecast_run_summary__run_timestamp") }}'
+        data_tests:
+          - not_null
+
+      - name: data_as_of_month
+        description: '{{ doc("vw_forecast_run_summary__data_as_of_month") }}'
+        data_tests:
+          - not_null
+
+      - name: forecasting_periods
+        description: '{{ doc("vw_forecast_run_summary__forecasting_periods") }}'
+        data_tests:
+          - not_null
+
+      - name: status
+        description: '{{ doc("vw_forecast_run_summary__status") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['completed', 'failed']
+
+      - name: rows_inserted
+        description: '{{ doc("vw_forecast_run_summary__rows_inserted") }}'
+
+      - name: runtime_seconds
+        description: '{{ doc("vw_forecast_run_summary__runtime_seconds") }}'
+
+      - name: executed_by
+        description: '{{ doc("vw_forecast_run_summary__executed_by") }}'
+
+      - name: error_message
+        description: '{{ doc("vw_forecast_run_summary__error_message") }}'

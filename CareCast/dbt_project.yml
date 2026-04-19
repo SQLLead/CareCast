@@ -1,0 +1,11 @@
+name: 'data_warehouse'
+
+models:
+  data_warehouse:
+    forecasting:
+      +schema: forecasting
+      +tags: forecast
+      +materialized: incremental
+      views:
+        +materialized: view
+

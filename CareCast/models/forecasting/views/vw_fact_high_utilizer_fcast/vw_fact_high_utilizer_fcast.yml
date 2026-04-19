@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: vw_fact_high_utilizer_fcast
+    description: '{{ doc("vw_fact_high_utilizer_fcast__overview") }}'
+    columns:
+      - name: visit_month
+        description: '{{ doc("vw_fact_high_utilizer_fcast__visit_month") }}'
+        data_tests:
+          - not_null
+
+      - name: dim_fqhc_key
+        description: '{{ doc("vw_fact_high_utilizer_fcast__dim_fqhc_key") }}'
+        data_tests:
+          - not_null
+
+      - name: total_ed_visits
+        description: '{{ doc("vw_fact_high_utilizer_fcast__total_ed_visits") }}'
+        data_tests:
+          - not_null
+
+      - name: total_avoidable_ed_visits
+        description: '{{ doc("vw_fact_high_utilizer_fcast__total_avoidable_ed_visits") }}'
+        data_tests:
+          - not_null
+
+      - name: total_ip_stays
+        description: '{{ doc("vw_fact_high_utilizer_fcast__total_ip_stays") }}'
+        data_tests:
+          - not_null
+
+      - name: total_readmissions
+        description: '{{ doc("vw_fact_high_utilizer_fcast__total_readmissions") }}'
+        data_tests:
+          - not_null

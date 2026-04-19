@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: vw_forecast_run_health
+    description: '{{ doc("vw_forecast_run_health__overview") }}'
+    columns:
+      - name: run_date
+        description: '{{ doc("vw_forecast_run_health__run_date") }}'
+        data_tests:
+          - not_null
+
+      - name: model_name
+        description: '{{ doc("vw_forecast_run_health__model_name") }}'
+        data_tests:
+          - not_null
+
+      - name: total_runs
+        description: '{{ doc("vw_forecast_run_health__total_runs") }}'
+        data_tests:
+          - not_null
+
+      - name: successful_runs
+        description: '{{ doc("vw_forecast_run_health__successful_runs") }}'
+        data_tests:
+          - not_null
+
+      - name: failed_runs
+        description: '{{ doc("vw_forecast_run_health__failed_runs") }}'
+        data_tests:
+          - not_null
+
+      - name: avg_rows_per_run
+        description: '{{ doc("vw_forecast_run_health__avg_rows_per_run") }}'
+
+      - name: max_rows
+        description: '{{ doc("vw_forecast_run_health__max_rows") }}'
+
+      - name: min_rows
+        description: '{{ doc("vw_forecast_run_health__min_rows") }}'

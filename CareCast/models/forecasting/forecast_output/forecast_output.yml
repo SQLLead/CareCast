@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: forecast_output
+    description: '{{ doc("forecast_output__overview") }}'
+    columns:
+      - name: forecast_id
+        description: '{{ doc("forecast_output__forecast_id") }}'
+        data_tests:
+          - not_null
+          - unique
+
+      - name: forecast_run_id
+        description: '{{ doc("forecast_output__forecast_run_id") }}'
+        data_tests:
+          - not_null
+
+      - name: model_name
+        description: '{{ doc("forecast_output__model_name") }}'
+        data_tests:
+          - not_null
+
+      - name: series
+        description: '{{ doc("forecast_output__series") }}'
+        data_tests:
+          - not_null
+
+      - name: forecast_date
+        description: '{{ doc("forecast_output__forecast_date") }}'
+        data_tests:
+          - not_null
+
+      - name: horizon_periods
+        description: '{{ doc("forecast_output__horizon_periods") }}'
+        data_tests:
+          - not_null
+
+      - name: yhat
+        description: '{{ doc("forecast_output__yhat") }}'
+        data_tests:
+          - not_null
+
+      - name: yhat_lower
+        description: '{{ doc("forecast_output__yhat_lower") }}'
+
+      - name: yhat_upper
+        description: '{{ doc("forecast_output__yhat_upper") }}'

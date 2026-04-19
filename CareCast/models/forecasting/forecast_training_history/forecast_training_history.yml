@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: forecast_training_history
+    description: '{{ doc("forecast_training_history__overview") }}'
+    columns:
+      - name: model_name
+        description: '{{ doc("forecast_training_history__model_name") }}'
+        data_tests:
+          - not_null
+
+      - name: forecast_model_fqn
+        description: '{{ doc("forecast_training_history__forecast_model_fqn") }}'
+        data_tests:
+          - not_null
+
+      - name: training_timestamp
+        description: '{{ doc("forecast_training_history__training_timestamp") }}'
+        data_tests:
+          - not_null
+
+      - name: model_status
+        description: '{{ doc("forecast_training_history__model_status") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['ACTIVE']
+
+      - name: model_type
+        description: '{{ doc("forecast_training_history__model_type") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['SNOWFLAKE_ML_FORECAST']
+
+      - name: input_ref
+        description: '{{ doc("forecast_training_history__input_ref") }}'
+        data_tests:
+          - not_null
+
+      - name: series_colname
+        description: '{{ doc("forecast_training_history__series_colname") }}'
+        data_tests:
+          - not_null
+
+      - name: timestamp_colname
+        description: '{{ doc("forecast_training_history__timestamp_colname") }}'
+        data_tests:
+          - not_null
+
+      - name: target_colname
+        description: '{{ doc("forecast_training_history__target_colname") }}'
+        data_tests:
+          - not_null
+
+      - name: training_rows
+        description: '{{ doc("forecast_training_history__training_rows") }}'
+        data_tests:
+          - not_null
+
+      - name: training_start_date
+        description: '{{ doc("forecast_training_history__training_start_date") }}'
+        data_tests:
+          - not_null
+
+      - name: training_end_date
+        description: '{{ doc("forecast_training_history__training_end_date") }}'
+        data_tests:
+          - not_null
+
+      - name: created_by
+        description: '{{ doc("forecast_training_history__created_by") }}'
+        data_tests:
+          - not_null
+
+      - name: model_database
+        description: '{{ doc("forecast_training_history__model_database") }}'
+        data_tests:
+          - not_null
+
+      - name: model_schema
+        description: '{{ doc("forecast_training_history__model_schema") }}'
+        data_tests:
+          - not_null
