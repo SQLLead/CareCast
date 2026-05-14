@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: vw_fact_care_gap_ff_fcast
+    description: '{{ doc("vw_fact_care_gap_ff_fcast__overview") }}'
+    columns:
+      - name: vb_report_month
+        description: '{{ doc("vw_fact_care_gap_ff_fcast__vb_report_month") }}'
+        data_tests:
+          - not_null
+
+      - name: health_plan
+        description: '{{ doc("vw_fact_care_gap_ff_fcast__health_plan") }}'
+        data_tests:
+          - not_null
+
+      - name: member_count
+        description: '{{ doc("vw_fact_care_gap_ff_fcast__member_count") }}'
+        data_tests:
+          - not_null
