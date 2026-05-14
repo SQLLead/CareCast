@@ -166,6 +166,14 @@ You must retrain (`forecast_training`) before the first run and whenever the und
 
 ### Core Models
 
+The following diagram shows the seed file, models, macros, and a small description of their interaction.
+
+![Carecast Model Interaction](CareCast_models_and_macros_interaction.png)
+
+The following diagram shows the parent/child relationship of the CareCast models.
+
+![CareCast Model Parent/Child Relationship](CareCast_DAG.png)
+
 #### [forecast_output](forecast_output/)
 Incremental, append-only table storing forecast results. Each row is one predicted data point from one forecast run. Populated by the `run_forecast_model()` macro, which calls `model!forecast()` and shapes the output with surrogate keys and run IDs.
 
@@ -214,3 +222,5 @@ Located at `seeds/reference_files/forecast_registry.csv`. Defines all forecast m
 | `forecast_periods` | Default number of future periods to predict |
 | `time_grain` | Temporal granularity: `daily`, `weekly`, `monthly`, `quarterly`, or `yearly` |
 | `enabled` | Whether the model is active (`true`/`false`); disabled models are excluded from `vw_actual_plus_forecast` |
+
+## 
