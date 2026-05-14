@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: vw_fact_care_gaps_fqhc_fcast
+    description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__overview") }}'
+    columns:
+      - name: fqhc_short
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__fqhc_short") }}'
+        data_tests:
+          - not_null
+
+      - name: gap_date
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__gap_date") }}'
+        data_tests:
+          - not_null
+
+      - name: member_count
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__member_count") }}'
+        data_tests:
+          - not_null
+
+      - name: total_open_care_gaps
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__total_open_care_gaps") }}'
+
+      - name: total_closed_care_gaps
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__total_closed_care_gaps") }}'
+
+      - name: open_care_gaps_count
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__open_care_gaps_count") }}'
+
+      - name: closed_care_gaps_count
+        description: '{{ doc("vw_fact_care_gaps_fqhc_fcast__closed_care_gaps_count") }}'

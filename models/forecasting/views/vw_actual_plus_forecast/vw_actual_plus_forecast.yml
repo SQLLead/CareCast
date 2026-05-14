@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: vw_actual_plus_forecast
+    description: '{{ doc("vw_actual_plus_forecast__overview") }}'
+    columns:
+      - name: model_name
+        description: '{{ doc("vw_actual_plus_forecast__model_name") }}'
+        data_tests:
+          - not_null
+
+      - name: period
+        description: '{{ doc("vw_actual_plus_forecast__period") }}'
+        data_tests:
+          - not_null
+
+      - name: series
+        description: '{{ doc("vw_actual_plus_forecast__series") }}'
+        data_tests:
+          - not_null
+
+      - name: value
+        description: '{{ doc("vw_actual_plus_forecast__value") }}'
+        data_tests:
+          - not_null
+
+      - name: is_forecast
+        description: '{{ doc("vw_actual_plus_forecast__is_forecast") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+
+      - name: forecast_run_id
+        description: '{{ doc("vw_actual_plus_forecast__forecast_run_id") }}'
+
+      - name: forecast_created_timestamp
+        description: '{{ doc("vw_actual_plus_forecast__forecast_created_timestamp") }}'
+
+      - name: data_as_of_month
+        description: '{{ doc("vw_actual_plus_forecast__data_as_of_month") }}'
+
+      - name: yhat_lower
+        description: '{{ doc("vw_actual_plus_forecast__yhat_lower") }}'
+
+      - name: yhat_upper
+        description: '{{ doc("vw_actual_plus_forecast__yhat_upper") }}'

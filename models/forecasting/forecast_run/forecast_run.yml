@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: forecast_run
+    description: "{{ doc('forecast_run') }}"
+    config:
+      tags: ['forecast']
+    columns:
+      - name: forecast_run_id
+        description: "{{ doc('forecast_run__forecast_run_id') }}"
+        tests:
+          - not_null
+          - unique
+
+      - name: run_timestamp
+        description: "{{ doc('forecast_run__run_timestamp') }}"
+        tests:
+          - not_null
+
+      - name: forecast_name
+        description: "{{ doc('forecast_run__forecast_name') }}"
+        tests:
+          - not_null
+
+      - name: status
+        description: "{{ doc('forecast_run__status') }}"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['pending', 'running', 'completed', 'failed']
+              quote: true
+
+      - name: rows_inserted
+        description: "{{ doc('forecast_run__rows_inserted') }}"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: start_timestamp
+        description: "{{ doc('forecast_run__start_timestamp') }}"
+        tests:
+          - not_null
+
+      - name: end_timestamp
+        description: "{{ doc('forecast_run__end_timestamp') }}"
+
+      - name: error_message
+        description: "{{ doc('forecast_run__error_message') }}"
+
+      - name: executed_by
+        description: "{{ doc('forecast_run__executed_by') }}"

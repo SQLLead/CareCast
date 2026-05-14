@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: vw_forecast_output_latest
+    description: '{{ doc("vw_forecast_output_latest__overview") }}'
+    columns:
+      - name: forecast_id
+        description: '{{ doc("vw_forecast_output_latest__forecast_id") }}'
+        data_tests:
+          - not_null
+          - unique
+
+      - name: forecast_run_id
+        description: '{{ doc("vw_forecast_output_latest__forecast_run_id") }}'
+        data_tests:
+          - not_null
+
+      - name: model_name
+        description: '{{ doc("vw_forecast_output_latest__model_name") }}'
+        data_tests:
+          - not_null
+
+      - name: series
+        description: '{{ doc("vw_forecast_output_latest__series") }}'
+        data_tests:
+          - not_null
+
+      - name: forecast_date
+        description: '{{ doc("vw_forecast_output_latest__forecast_date") }}'
+        data_tests:
+          - not_null
+
+      - name: horizon_periods
+        description: '{{ doc("vw_forecast_output_latest__horizon_periods") }}'
+        data_tests:
+          - not_null
+
+      - name: yhat
+        description: '{{ doc("vw_forecast_output_latest__yhat") }}'
+        data_tests:
+          - not_null
+
+      - name: yhat_lower
+        description: '{{ doc("vw_forecast_output_latest__yhat_lower") }}'
+
+      - name: yhat_upper
+        description: '{{ doc("vw_forecast_output_latest__yhat_upper") }}'
+
+      - name: run_timestamp
+        description: '{{ doc("vw_forecast_output_latest__run_timestamp") }}'
+        data_tests:
+          - not_null
+
+      - name: data_as_of_month
+        description: '{{ doc("vw_forecast_output_latest__data_as_of_month") }}'
+        data_tests:
+          - not_null
+
+      - name: forecasting_periods
+        description: '{{ doc("vw_forecast_output_latest__forecasting_periods") }}'
+        data_tests:
+          - not_null
+
+      - name: time_grain
+        description: '{{ doc("vw_forecast_output_latest__time_grain") }}'
+        data_tests:
+          - not_null
